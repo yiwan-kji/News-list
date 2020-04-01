@@ -1,0 +1,6 @@
+<view class="box">
+  <navBar background='#486FF1' title="新闻详情" color="#FFFFFF" back="left" iconTheme="white" bind:back="backHome">
+    <view bind:tap="toggleBottomPopup" style="margin-left: 20rpx;" slot="left">
+    </view>
+  </navBar>
+</view>

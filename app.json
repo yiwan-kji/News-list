@@ -1,0 +1,39 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/detal/detal",
+    "pages/about/about"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#3682F8",
+    "navigationBarTitleText": "新闻列表",
+    "navigationBarTextStyle": "white"
+  },
+  "sitemapLocation": "sitemap.json",
+  "usingComponents": {
+    "navBar": "miniprograms-navigation-bar",
+    "van-tab": "vant-weapp/tab/index",
+    "van-tabs": "vant-weapp/tabs/index",
+    "van-notify": "vant-weapp/notify/index"
+  },
+  "tabBar": {
+    "color": "#888888",
+    "selectedColor": "#494949",
+    "borderStyle": "black",
+    "list": [
+      {
+        "text": "首页",
+        "pagePath": "pages/index/index",
+        "iconPath": "static/img/tabBar/home-sel.png",
+        "selectedIconPath": "static/img/tabBar/home.png"
+      },
+      {
+        "text": "我的",
+        "pagePath": "pages/about/about",
+        "iconPath": "static/img/tabBar/user.png",
+        "selectedIconPath": "static/img/tabBar/user-sel.png"
+      }
+    ]
+  }
+}

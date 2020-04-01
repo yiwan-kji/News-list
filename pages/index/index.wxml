@@ -1,0 +1,27 @@
+<view class="content">
+  <!-- 自定义导航 -->
+  <navBar background='#486FF1' title="资讯列表" color="#FFFFFF">
+    <view bind:tap="toggleBottomPopup" style="margin-left: 20rpx;" slot="left">
+    </view>
+  </navBar>
+  <!-- tab栏 -->
+  <van-tabs active="{{ active }}" color="#0599F6" swipeable>
+    <van-tab title="标签 1">
+      <view class="box" wx:for="{{data}}" wx:key="{{index}}">
+        <view class="item"  data-gid='{{item}}' bindtap="Todetail">
+          <view class="item-box">
+              <text class="item-title overflow-text">{{item.title}}</text>
+              <view class="tag-time">
+                <view class="tag">{{item.typeText}}</view>
+                <view class="time">{{item.intime}}</view>
+              </view>
+          </view>
+          <image class="img" src="../../static/img/background1.jpg" mode="scaleToFill"></image>
+        </view>
+      </view>
+    </van-tab>
+    <van-tab title="标签 2">内容 2</van-tab>
+    <van-tab title="标签 3">内容 3</van-tab>
+    <van-tab title="标签 4">内容 4</van-tab>
+  </van-tabs>
+</view>

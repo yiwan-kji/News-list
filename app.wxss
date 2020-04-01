@@ -1,0 +1,9 @@
+/**app.wxss**/
+/* 多行文本溢出 */
+.overflow-text{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp:2;
+  -webkit-box-orient: vertical;
+}
