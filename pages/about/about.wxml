@@ -1,3 +1,6 @@
 <view>
-  
+    <navBar background='#486FF1' title="用户" color="#FFFFFF">
+    <view style="margin-left: 20rpx;" slot="left">
+    </view>
+  </navBar>
 </view>

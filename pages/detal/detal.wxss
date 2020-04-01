@@ -1,1 +1,8 @@
 /* pages/detal/detal.wxss */
+/* 导航栏宽度 */
+.lxy-nav-bar__center text{
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+  width: 400rpx;
+}

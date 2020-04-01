@@ -7,6 +7,7 @@ Page({
     page: 1,
     limit: 10,
     data: {},
+    imgUrl: ['../../static/img/background1.jpg', '../../static/img/background2.jpg', '../../static/img/background3.jpg', '../../static/img/background4.jpg']
   },
   // 生命周期
   onLoad: function () {
@@ -32,6 +33,8 @@ Page({
         }else{
           for(let i=0;i<res.data.length;i++){
             res.data[i].typeText = that.typeFunction(res.data[i].type)
+            let num = Math.floor(Math.random() * 4);
+            res.data[i].img = that.data.imgUrl[num]
             changeData[i] = res.data[i]
           }
           that.setData({

@@ -16,7 +16,7 @@
                 <view class="time">{{item.intime}}</view>
               </view>
           </view>
-          <image class="img" src="../../static/img/background1.jpg" mode="scaleToFill"></image>
+          <image class="img" src="{{item.img}}" mode="scaleToFill"></image>
         </view>
       </view>
     </van-tab>
