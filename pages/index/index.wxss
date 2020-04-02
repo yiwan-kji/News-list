@@ -47,7 +47,7 @@
   margin-left: 25rpx;
   margin-top: 35rpx;
   font-size: 25rpx;
-  width: 90%;
+  width: 95%;
   justify-content: space-between;
   display: flex;
   flex-direction: row;
@@ -62,12 +62,21 @@
   color: #C5C5C5;
 }
 .img{
-  max-width: 200rpx;
-  max-height: 200rpx;
+  max-width: 160rpx;
+  max-height: 160rpx;
   border-radius: 10rpx;
   margin-right: 10px;
+  margin-top: 20rpx;
 }
-
+.nodata{
+  margin-top: 100rpx;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 500rpx;
+}
 
 
 

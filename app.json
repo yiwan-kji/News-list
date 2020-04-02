@@ -15,7 +15,8 @@
     "navBar": "miniprograms-navigation-bar",
     "van-tab": "vant-weapp/tab/index",
     "van-tabs": "vant-weapp/tabs/index",
-    "van-notify": "vant-weapp/notify/index"
+    "van-notify": "vant-weapp/notify/index",
+    "van-loading": "vant-weapp/loading/index"
   },
   "tabBar": {
     "color": "#888888",

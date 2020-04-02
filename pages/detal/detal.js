@@ -1,19 +1,52 @@
-// pages/detal/detal.js
+var util = require('../../utils/util.js');
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    item: {}
+    item: {},
+    time: '',
+    article_content: null,
+    dataAlready: false
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.setData({
-      item: JSON.parse(unescape(options.goods))
+    let that = this
+    wx.request({
+      url: `${app.globalData.path}/news_detail`,
+      method: 'POST',
+      data: {
+        id: options.id
+      },
+      success:function(res){
+        that.setData({
+          item: res.data
+          })
+          let TIME = util.formatTime(new Date());
+          var sRDate = new Date(TIME);
+          var eRDate = new Date(that.data.item.intime);
+          var result = (eRDate-sRDate)/(24*60*60*1000);
+          result = result.toString().substr(1);
+          let time = that._gshDate(result)
+          that.setData({
+            time: time
+          })
+          // 处理content
+          let article_content = that.data.item.content
+          article_content = article_content.replace(/<img/gi, '<img style="max-width:100%;height:auto;display:block" ').replace(/<section/g, '<div').replace(/\/section>/g, '\div>');
+        console.log(article_content)
+          that.setData({
+            article_content: article_content
+          })
+      }
+    })
+    that.setData({
+      dataAlready: true
     })
   },
 
@@ -64,6 +97,26 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  // 时间转换
+  _gshDate:function(shijian) {
+    if (shijian < 0) {
+      return ''
+    } else if ((shijian / 1000 < 30)) {
+      return '刚刚'
+    } else if (shijian / 1000 < 60) {
+      return parseInt((shijian / 1000)) + '秒前'
+    } else if ((shijian / 60000) < 60) {
+      return parseInt((shijian / 60000)) + '分钟前'
+    } else if ((shijian / 3600000) < 24) {
+      return parseInt(shijian / 3600000) + '小时前'
+    } else if ((shijian / 86400000) < 31) {
+      return parseInt(shijian / 86400000) + '天前'
+    } else if ((shijian / 2592000000) < 12) {
+      return parseInt(shijian / 2592000000) + '月前'
+    } else {
+      return parseInt(shijian / 31536000000) + '年前'
+    }
   },
   backHome(){
     wx.switchTab({

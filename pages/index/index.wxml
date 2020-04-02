@@ -5,23 +5,88 @@
     </view>
   </navBar>
   <!-- tab栏 -->
-  <van-tabs active="{{ active }}" color="#0599F6" swipeable>
-    <van-tab title="标签 1">
-      <view class="box" wx:for="{{data}}" wx:key="{{index}}">
-        <view class="item"  data-gid='{{item}}' bindtap="Todetail">
+  <van-tabs bind:click="tagClick" active="{{ active }}" color="#0599F6" swipeable>
+    <van-tab title="农业资讯">
+      <view >
+        <view class="box" wx:for="{{data0}}" wx:key="{{item.id}}">
+          <view  class="item"  data-gid='{{item.id}}' bindtap="Todetail">
+            <view class="item-box">
+                <text class="item-title overflow-text">{{item.title}}</text>
+                <view class="tag-time">
+                  <view class="tag">{{item.typeText}}</view>
+                  <view class="time">热度 {{item.hot}}</view>
+                  <view class="time">{{item.intime}}</view>
+                </view>
+            </view>
+            <image class="img" src="{{item.img}}" mode="scaleToFill"></image>
+          </view>
+        </view>
+      </view>
+      <!-- <view class="nodata" wx:else>
+          <text>暂时没有数据啊!</text>
+      </view> -->
+    </van-tab>
+    <van-tab title="价格行情">
+      <view >
+        <view class="box" wx:for="{{data1}}" wx:key="{{item.id}}">
+          <view  class="item"  data-gid='{{item}}' bindtap="Todetail">
+            <view class="item-box">
+                <text class="item-title overflow-text">{{item.title}}</text>
+                <view class="tag-time">
+                  <view class="tag">{{item.typeText}}</view>
+                  <view class="time">热度  {{item.hot}}</view>
+                  <view class="time">{{item.intime}}</view>
+                </view>
+            </view>
+            <image class="img" src="{{item.img}}" mode="scaleToFill"></image>
+          </view>
+        </view>
+      </view>
+      <!-- <view class="nodata" wx:else>
+        <text>暂时没有数据啊!</text>
+      </view> -->
+    </van-tab>
+    <van-tab title="农药新闻">
+      <view >
+              <view class="box" wx:for="{{data2}}" wx:key="{{item.id}}">
+        <view  class="item"  data-gid='{{item}}' bindtap="Todetail">
           <view class="item-box">
               <text class="item-title overflow-text">{{item.title}}</text>
               <view class="tag-time">
                 <view class="tag">{{item.typeText}}</view>
+                <view class="time">热度  {{item.hot}}</view>
                 <view class="time">{{item.intime}}</view>
               </view>
           </view>
           <image class="img" src="{{item.img}}" mode="scaleToFill"></image>
         </view>
       </view>
+      </view>
+       <!-- <view class="nodata" wx:else>
+          <text>暂时没有数据啊!</text>
+        </view> -->
+
     </van-tab>
-    <van-tab title="标签 2">内容 2</van-tab>
-    <van-tab title="标签 3">内容 3</van-tab>
-    <van-tab title="标签 4">内容 4</van-tab>
+    <van-tab title="化肥新闻">
+    <view >
+        <view class="box" wx:for="{{data3}}" wx:key="{{index}}">
+        <view wx:if="{{isHidden3}}" class="item"  data-gid='{{item}}' bindtap="Todetail">
+          <view class="item-box">
+              <text class="item-title overflow-text">{{item.title}}</text>
+              <view class="tag-time">
+                <view class="tag">{{item.typeText}}</view>
+                <view class="time">热度  {{item.hot}}</view>
+                <view class="time">{{item.intime}}</view>
+              </view>
+          </view>
+          <image class="img" src="{{item.img}}" mode="scaleToFill"></image>
+        </view>
+      </view>
+    </view>
+    <!-- <view class="nodata" wx:else>
+      <text>暂时没有数据啊!</text>
+    </view> -->
+
+    </van-tab>
   </van-tabs>
 </view>

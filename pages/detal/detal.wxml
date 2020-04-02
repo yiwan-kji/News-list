@@ -1,9 +1,27 @@
 <view class="box">
-  <navBar background='#486FF1' title="{{item.title}}" color="#FFFFFF" back="left" iconTheme="white" bind:back="backHome">
+  <navBar background='#486FF1' title="资讯详情" color="#FFFFFF" back="left" iconTheme="white" bind:back="backHome">
     <view bind:tap="toggleBottomPopup" style="margin-left: 20rpx;" slot="left">
     </view>
   </navBar>
-  <view class="box">
-   <pre>{{item.content}}</pre>
+  <van-loading class="loading" wx:if="{{!dataAlready}}" color="#1989fa" vertical>
+  数据加载中...
+  </van-loading>
+  <view wx:else class="box">
+    <view class="top">
+      <view class="title">{{item.title}}</view>
+      <view class="user">
+        <image class="img" src="../../static/img/user.png"></image>
+        <view class="user-text">
+          <text class="user-text-1">农讯会平台</text>
+          <text class="user-text-2">{{time}}</text>
+        </view>
+      </view>
+    </view>
+    <view class="content">
+      <rich-text nodes="{{article_content}}"></rich-text>
+    </view>
+    <view class="end">
+      <text>----------- END -----------</text>
+    </view>
   </view>
 </view>

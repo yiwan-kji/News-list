@@ -1,6 +1,18 @@
 <view>
-    <navBar background='#486FF1' title="用户" color="#FFFFFF">
+    <navBar background='#486FF1' color="#FFFFFF">
     <view style="margin-left: 20rpx;" slot="left">
     </view>
   </navBar>
+  <view class="box">
+    <view wx:if="{{isHide}}" class="box-top">
+      <view class="title">
+        <text class="text1">未登录/注册</text>
+        <text class="text2">点击头像可登录/注册</text>
+      </view>
+      <button class="button" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">
+        <image class="img" src="../../static/img/user.png"></image>
+      </button>
+    </view>
+    <view class="box-content"></view>
+  </view>
 </view>
