@@ -12,27 +12,32 @@
   align-items: center;
 }
 .title{
-  margin-left: 50rpx;
+  width: 70%;
+  background-color: #486FF1;
+  height: 150rpx;
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
+  justify-items: center;
   color: #ffffff;
 }
 .text1{
-  font-size: 45rpx;
+  font-size: 55rpx;
   font-weight: 600;
+  margin-top: 50rpx;
 }
 .text2{
-  padding-top: 10rpx;
-  font-size: 25rpx;
+  margin-top: 65rpx;
+  font-size: 27rpx;
 }
-.box-top .img{
-  height: 200rpx;
-  width: 200rpx;
-  border-radius: 100%;
+.img{
+  height: 130rpx;
+  width: 130rpx;
+  border-radius: 50%;
 }
 .button{
    background:#486FF1;
-   border:none;
+   margin-right: 20rpx;
 }
 button{
   line-height: 0;

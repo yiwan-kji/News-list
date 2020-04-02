@@ -36,9 +36,10 @@ Page({
           that.setData({
             time: time
           })
-          // 处理content
-          let article_content = that.data.item.content
-          article_content = article_content.replace(/<img/gi, '<img style="max-width:100%;height:auto;display:block" ').replace(/<section/g, '<div').replace(/\/section>/g, '\div>');
+          // 处理content的img图片
+        let article_content = that.data.item.content
+        let imgReg = /<img.*?(?:>|\/>)/gi;
+        article_content = article_content.replace(imgReg, " ");
         console.log(article_content)
           that.setData({
             article_content: article_content

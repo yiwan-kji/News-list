@@ -12,7 +12,7 @@
       <view class="user">
         <image class="img" src="../../static/img/user.png"></image>
         <view class="user-text">
-          <text class="user-text-1">农讯会平台</text>
+          <text class="user-text-1">农讯汇平台</text>
           <text class="user-text-2">{{time}}</text>
         </view>
       </view>

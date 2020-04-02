@@ -5,12 +5,12 @@
   </navBar>
   <view class="box">
     <view wx:if="{{isHide}}" class="box-top">
-      <view class="title">
-        <text class="text1">未登录/注册</text>
-        <text class="text2">点击头像可登录/注册</text>
-      </view>
+      <button class="title" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">
+        <view class="text1">未登录/注册</view>
+        <view class="text2">点击头像可登录/注册</view>
+      </button>
       <button class="button" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">
-        <image class="img" src="../../static/img/user.png"></image>
+        <image class="img" src="../../static/img/user-sel.png"></image>
       </button>
     </view>
     <view class="box-content"></view>
